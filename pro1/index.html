@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/0f6bed45f0.js" crossorigin="anonymous"></script>
+  <script>
+    function showContent(component) {
+      var contentDivs = document.getElementsByClassName("content");
+      for (var i = 0; i < contentDivs.length; i++) {
+        contentDivs[i].classList.remove("show");
+      }
+      document.getElementById(component).classList.add("show");
+    }
+    function myFunction() {
+
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("myBtn");
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "Read less";
+        moreText.style.display = "inline";
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="left-panel">
+    <ul>
+      <li><a href="#" onclick="showContent('home')">
+          <h3 style="color: white;">Home</h3>
+        </a></li>
+      <li><a href="#" onclick="showContent('information')">
+          <h3 style="color: white;">Information</h3>
+        </a></li>
+      <li><a href="#" onclick="showContent('guide')">
+          <h3 style="color: white;">Guide</h3>
+        </a></li>
+      <li><a href="#" onclick="showContent('contact')">
+          <h3 style="color: white;">Contact</h3>
+        </a>
+      <li>
+
+    </ul>
+  </div>
+  <div id="content">
+    <div id="home" class="content show">
+      <h1>Welcome to the Home Page</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elitoluptas distinctio recusandae reiciendis pariatur eaque
+        repellendus animi amet consectetur adipisicing elitoluptas distinctio recusandae reiciendis pariatur eaque
+        repellendus animi amet consectetur adipisicing elitoluptas distinctio recusandae reiciendis pariatur eaque
+        repellendus animi amet sequi corrupti sit hic aliquam. Voluptate, molestias. Ad minima atque quasi voluptas,
+        maiores numquam neque necessitatibus adipisci! Eius, doloribus rerum. Molestias iure dolores quasi commodi vel
+        ab iste et..</p>
+    </div>
+    <div id="information" class="content">
+      <h1>Information</h1>
+      <div class="information">
+        <p class="fir">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos perspiciatis, laborum enim
+          autem eos expedita ullam sint reiciendis culpa, dolorum cum quae amet deserunt tempora. Dolor vitae, beatae
+          corrupti, magni sit maiores veniam quidem ullam obcaecati asperiores ut, quos quod deserunt delectus.
+          Provident fugiat officiis placeat suscipit quo. Magni amet nemo, voluptatum illo delectus facere est odit
+          itaque consequatur, quibusdam facilis voluptatem tempore repudiandae enim mollitia laboriosam recusandae
+          aliquid perspiciatis soluta quam fugit corporis ullam hic? Ea mollitia dolor nobis voluptates inventore
+          dolorum ipsum itaque voluptas dolorem voluptatum reprehenderit dignissimos vitae eaque odit soluta enim, odio
+          nemo ipsa, sed maiores!.</p>
+        <img class="sec" src="Image.jpg" alt="">
+      </div>
+    </div>
+    <div id="guide" class="content ">
+      <h1>Guide</h1>
+      <p>Lorem ipsum dolor sit amet, consecteturnsectetur ut officiis ipsum, optio harum quo unt odit modi amet
+        consectetur adipisicing elitoluptas distinctio recusandae reiciendis pariatur eaque repellendus animi amet
+        consectetur adipisicing elitoluptas distinctio recusandae reiciendis pariatur eaque repellendus animi laudantium
+        enim sequi dignissimos dolorem asperiores consequatur molestias?<span id="dots">...</span><span
+          id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae
+          massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim
+          ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida
+          venenatisempor porta.</span></p>
+      <button onclick="myFunction()" id="myBtn">Read more</button>
+
+    </div>
+    <div id="contact" class="content">
+      <h1>Contact Information</h1>
+
+      <form action="process_form.php" method="POST">
+        <h2 style="padding: 2px; padding-top: 10px;padding-bottom: 10px;">Get in touch with us!</h2>
+        <span><i class="fa-solid fa-user"></i></span>
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="Name..." required><br><br>
+
+        <span><i class="fa-solid fa-envelope"></i></span>
+        <label for="email"></label>
+        <input type="email" id="email" name="email" placeholder="Email..."><br><br>
+
+        <span><i class="fa-solid fa-message"></i></span>
+        <label for="message"> </label>
+        <textarea id="message" name="message" placeholder="Message..." required></textarea><br><br>
+
+        <button type="button" class="btn btn-dark">Submit</button>
+      </form>
+
+
+    </div>
+
+  </div>
+</body>
+
+</html>
